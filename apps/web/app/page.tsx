@@ -75,17 +75,8 @@ function HabitCell({ value }: { value: boolean }) {
 export default function Page() {
   return (
     <main className="relative min-h-screen overflow-x-clip bg-page-bg text-page-ink">
-      <div className="mx-auto flex w-full max-w-6xl flex-col px-6 pb-24 pt-8 md:px-10 lg:px-14">
-        <header className="flex items-center justify-between">
-          <Link className="font-display text-2xl font-bold tracking-tight" href="/">
-            HABBIT
-          </Link>
-          <Button variant="outline" className="rounded-full px-5">
-            Sign in
-          </Button>
-        </header>
-
-        <section className="mt-20 grid gap-12 lg:grid-cols-[1.12fr_0.88fr] lg:items-start">
+      <div className="mx-auto flex w-full max-w-6xl flex-col px-6 pb-24 md:px-10 lg:px-14">
+        <section className="mt-8 grid gap-12 lg:grid-cols-[1.12fr_0.88fr] lg:items-start">
           <div className="opacity-0 animate-[rise_600ms_ease-out_forwards]">
             <Badge variant="secondary">Intentional routine design</Badge>
             <h1 className="font-display mt-5 text-5xl leading-[0.94] tracking-tight md:text-7xl">
@@ -114,8 +105,12 @@ export default function Page() {
               ].map((metric) => (
                 <Card key={metric.label} className="bg-surface-raised">
                   <CardContent className="p-5">
-                    <p className="font-display text-3xl leading-none">{metric.value}</p>
-                    <p className="mt-2 text-xs text-page-ink/50">{metric.label}</p>
+                    <p className="font-display text-3xl leading-none">
+                      {metric.value}
+                    </p>
+                    <p className="mt-2 text-xs text-page-ink/50">
+                      {metric.label}
+                    </p>
                   </CardContent>
                 </Card>
               ))}
@@ -129,7 +124,9 @@ export default function Page() {
             <CardHeader>
               <div className="flex items-center justify-between">
                 <div>
-                  <CardTitle className="font-display text-2xl">This week</CardTitle>
+                  <CardTitle className="font-display text-2xl">
+                    This week
+                  </CardTitle>
                   <CardDescription>
                     Focus score is climbing. Keep today simple.
                   </CardDescription>
@@ -142,7 +139,9 @@ export default function Page() {
                 <div className="grid grid-cols-[56px_repeat(3,minmax(0,1fr))] gap-y-3 text-xs text-page-ink/55">
                   <span className="font-semibold text-page-ink/80">Day</span>
                   <span className="font-semibold text-page-ink/80">Move</span>
-                  <span className="font-semibold text-page-ink/80">Journal</span>
+                  <span className="font-semibold text-page-ink/80">
+                    Journal
+                  </span>
                   <span className="font-semibold text-page-ink/80">Read</span>
                   {HABIT_ROWS.map((entry) => (
                     <div key={entry.day} className="contents">
@@ -198,7 +197,9 @@ export default function Page() {
                 <p className="font-display text-4xl leading-none text-accent">
                   {feature.stat}
                 </p>
-                <p className="mt-2 text-sm text-page-ink/50">{feature.detail}</p>
+                <p className="mt-2 text-sm text-page-ink/50">
+                  {feature.detail}
+                </p>
               </CardContent>
             </Card>
           ))}
@@ -215,7 +216,9 @@ export default function Page() {
             {STEPS.map((step) => (
               <Card key={step.number} className="bg-surface">
                 <CardHeader>
-                  <span className="font-display text-sm text-accent">{step.number}</span>
+                  <span className="font-display text-sm text-accent">
+                    {step.number}
+                  </span>
                   <CardTitle className="font-display text-xl">
                     {step.label}
                   </CardTitle>
@@ -241,7 +244,10 @@ export default function Page() {
                   Create your first habit board in under five minutes.
                 </p>
               </div>
-              <Button variant="outline" className="min-w-44 border-0 bg-surface hover:bg-surface-raised">
+              <Button
+                variant="outline"
+                className="min-w-44 border-0 bg-surface hover:bg-surface-raised"
+              >
                 Launch dashboard
               </Button>
             </CardContent>
