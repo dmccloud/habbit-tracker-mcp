@@ -10,6 +10,7 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import Link from "next/link";
+import { ConvexClientProvider } from "./ConvexClientProvider";
 import { Button } from "@repo/ui/components/button";
 
 export const metadata: Metadata = {
@@ -48,7 +49,7 @@ export default function RootLayout({
               </SignedIn>
             </div>
           </header>
-          {children}
+          <ConvexClientProvider>{children}</ConvexClientProvider>
         </body>
       </html>
     </ClerkProvider>
