@@ -13,8 +13,9 @@ export const setFinished = mutation({
     id: v.id("tasks"),
   },
   handler: async (ctx, args) => {
+    const current = await ctx.db.get(args.id);
     await ctx.db.patch(args.id, {
-      isFinished: true,
+      isFinished: current.isFinished ? false : true,
     });
   },
 });
