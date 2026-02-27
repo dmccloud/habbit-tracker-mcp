@@ -9,22 +9,15 @@ export default function Tasks() {
   const setFinished = useMutation(api.tasks.setFinished);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {tasks?.map(
-        ({ _id, text, isFinished }) => (
-          console.log(_id),
-          (
-            <div key={_id}>
-              <div>{text}</div>
-              <button onClick={() => setFinished({ id: _id })}>
-                Set finished
-              </button>
-              <Badge variant="outline">
-                {isFinished ? "Finished" : "Not finished"}
-              </Badge>
-            </div>
-          )
-        ),
-      )}
+      {tasks?.map(({ _id, text, isFinished }) => (
+        <div key={_id}>
+          <div>{text}</div>
+          <button onClick={() => setFinished({ id: _id })}>Set finished</button>
+          <Badge variant="outline">
+            {isFinished ? "Finished" : "Not finished"}
+          </Badge>
+        </div>
+      ))}
     </main>
   );
 }
