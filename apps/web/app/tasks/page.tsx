@@ -4,7 +4,7 @@ import { useMutation, useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import { Badge } from "@repo/ui/components/badge";
 
-export default function tasks() {
+export default function Tasks() {
   const tasks = useQuery(api.tasks.get);
   const setFinished = useMutation(api.tasks.setFinished);
   return (
